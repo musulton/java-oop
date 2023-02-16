@@ -1,5 +1,7 @@
 package com.enigma.schoolReport.model;
 
+import com.enigma.enumeration.Gender;
+
 public class Student {
     private String NIM;
     private String name;
@@ -7,11 +9,14 @@ public class Student {
     private String address;
     private Raport raport;
 
-    public Student(String NIM, String name, int age, String address) {
+    private Gender gender;
+
+    public Student(String NIM, String name, int age, String address, Gender gender) {
         this.NIM = NIM;
         this.name = name;
         this.age = age;
         this.address = address;
+        this.gender = gender;
     }
 
     public String getAddress() {
@@ -36,6 +41,14 @@ public class Student {
 
     public void setRaport(Raport raport) {
         this.raport = raport;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     @Override

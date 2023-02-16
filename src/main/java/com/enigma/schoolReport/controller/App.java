@@ -1,5 +1,6 @@
 package com.enigma.schoolReport.controller;
 
+import com.enigma.enumeration.Gender;
 import com.enigma.schoolReport.model.Raport;
 import com.enigma.schoolReport.model.Student;
 import com.enigma.schoolReport.repo.StudentRepo;
@@ -13,6 +14,7 @@ public class App {
             System.out.println("NIM\t\t\t: " + student.getNIM());
             System.out.println("Nama Siswa\t: " + student.getName());
             System.out.println("Alamat\t\t: " + student.getAddress());
+            System.out.println("Gender\t\t: " + student.getGender());
             System.out.println("\nLaporan Nilai Siswa");
             System.out.println("B. Indonesia\t: " + student.getRaport().getbIndonesia());
             System.out.println("B. Inggris\t\t: " + student.getRaport().getbInggris());
@@ -28,9 +30,9 @@ public class App {
         StudentRepo studentRepo = new StudentRepo();
         StudentService studentService = new StudentService(studentRepo);
 
-        Student student1 = new Student("A001", "Budi Hartono", 21, "Bandung");
-        Raport studentRaport1 = new Raport();
+        Student student1 = new Student("A001", "Budi Hartono", 21, "Bandung", Gender.PRIA);
 
+        Raport studentRaport1 = new Raport();
         studentRaport1.setbIndonesia(90.29);
         studentRaport1.setbInggris(60.43);
         studentRaport1.setMatematika(78.01);
@@ -41,7 +43,7 @@ public class App {
         studentService.registerStudent(student1);
 
         // Student 2
-        Student student2 = new Student("A002", "Bude Hartini", 22, "Ciamis");
+        Student student2 = new Student("A002", "Bude Hartini", 22, "Ciamis", Gender.WANITA);
         Raport studentRaport2 = new Raport();
 
         studentRaport2.setbIndonesia(80.39);
